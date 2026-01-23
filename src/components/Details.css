@@ -1,0 +1,149 @@
+.details {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 6rem 2rem;
+  border-bottom: 1px solid rgba(197, 217, 227, 0.15);
+}
+
+.details-content {
+  max-width: 1200px;
+  width: 100%;
+  z-index: 2;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #6B5B4D;
+  text-align: center;
+  margin-bottom: 4rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.events-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.event-section {
+  flex: 1;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.event-title {
+  font-family: 'Marck Script', cursive;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #6B5B4D;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.05em;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.event-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #6B5B4D;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.event-location {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #8B7355;
+  margin: 0 0 1.5rem 0;
+}
+
+.event-time {
+  font-family: 'Marck Script', cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #C5A880;
+  margin: -1rem 0 0 0;
+}
+
+.location-button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background: #C5A880;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-button:hover {
+  box-shadow: 0 6px 20px rgba(197, 168, 128, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .details {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .events-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .event-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .event-title {
+    font-size: 2.2rem;
+  }
+
+  .event-label {
+    font-size: 1.6rem;
+  }
+
+  .event-time {
+    font-size: 2rem;
+  }
+
+  .event-date,
+  .event-location {
+    font-size: 1rem;
+  }
+
+  .location-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+}

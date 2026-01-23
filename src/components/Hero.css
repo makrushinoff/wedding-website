@@ -1,0 +1,373 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 3rem;
+  border-bottom: 1px solid rgba(213, 200, 217, 0.15);
+  gap: 2rem;
+}
+
+.hero-images-collage {
+  flex: 1.2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 85vh;
+  max-width: 55%;
+}
+
+.hero-image-main {
+  position: relative;
+  z-index: 1;
+  width: 75%;
+  height: auto;
+}
+
+.hero-image-main img {
+  width: auto;
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow:
+    0 20px 50px rgba(107, 91, 77, 0.15),
+    0 10px 25px rgba(197, 168, 128, 0.1);
+}
+
+.hero-image-accent {
+  position: absolute;
+  bottom: -3rem;
+  right: -1rem;
+  z-index: 2;
+}
+
+.hero-image-accent img {
+  width: auto;
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow:
+    0 25px 60px rgba(197, 168, 128, 0.25),
+    0 15px 35px rgba(107, 91, 77, 0.15);
+  border: 4px solid #FFFFFF;
+}
+
+.hero-content {
+  flex: 0.8;
+  text-align: center;
+  z-index: 3;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Монограма */
+.monogram {
+  margin-bottom: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.monogram-circle {
+  width: 220px;
+  height: 220px;
+  border: 2px solid #FFD3D8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 248, 250, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 32px rgba(255, 211, 216, 0.3),
+    0 2px 8px rgba(197, 168, 128, 0.15);
+}
+
+.monogram-circle .initial {
+  font-family: 'Marck Script', cursive;
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: #8B7355;
+  letter-spacing: 0.15em;
+}
+
+.monogram-circle .ampersand {
+  font-family: 'Marck Script', cursive;
+  font-size: 3.5rem;
+  color: #C5A880;
+  margin: 0 0.3rem;
+  font-weight: 400;
+}
+
+/* Імена */
+.names {
+  font-family: 'Marck Script', cursive;
+  font-size: 6.5rem;
+  font-weight: 400;
+  color: #6B5B4D;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(139, 115, 85, 0.1);
+}
+
+/* Дата */
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.date p {
+  font-family: 'Marck Script', cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #8B7355;
+  margin: 0;
+  letter-spacing: 0.15em;
+  text-transform: none;
+}
+
+.date-line {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D4C4B0, transparent);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  margin-top: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.scroll-arrow {
+  font-size: 2rem;
+  color: #C5A880;
+  transition: color 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-arrow {
+  color: #8B7355;
+}
+
+.scroll-text {
+  font-family: 'Marck Script', cursive;
+  font-size: 1.5rem;
+  color: #8B7355;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* Floating decorative elements */
+.float-element {
+  position: absolute;
+  background: radial-gradient(circle, rgba(255, 211, 216, 0.15) 0%, rgba(255, 211, 216, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.float-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+}
+
+.float-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  right: 15%;
+  background: radial-gradient(circle, rgba(197, 217, 227, 0.15) 0%, rgba(197, 217, 227, 0) 70%);
+}
+
+/* Elegant ornamental decorations */
+.ornament {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Corner ornaments - floral flourishes */
+.ornament-corner-tl {
+  width: 150px;
+  height: 150px;
+  top: 40px;
+  left: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 10 90 Q 10 10 90 10' stroke='%23C5A880' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='15' cy='85' r='3' fill='%23FFD3D8'/%3E%3Ccircle cx='25' cy='75' r='2' fill='%23D5C8D9'/%3E%3Ccircle cx='35' cy='65' r='2.5' fill='%23C5D9E3'/%3E%3Ccircle cx='45' cy='55' r='2' fill='%23FFE5B4'/%3E%3Ccircle cx='55' cy='45' r='2.5' fill='%23D4E5E4'/%3E%3Ccircle cx='65' cy='35' r='2' fill='%23FFD3D8'/%3E%3Ccircle cx='75' cy='25' r='2.5' fill='%23D5C8D9'/%3E%3Ccircle cx='85' cy='15' r='3' fill='%23C5A880'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornament-corner-tr {
+  width: 150px;
+  height: 150px;
+  top: 40px;
+  right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 90 90 Q 90 10 10 10' stroke='%23D4C4B0' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='85' cy='85' r='3' fill='%23C5D9E3'/%3E%3Ccircle cx='75' cy='75' r='2' fill='%23FFE5B4'/%3E%3Ccircle cx='65' cy='65' r='2.5' fill='%23D5C8D9'/%3E%3Ccircle cx='55' cy='55' r='2' fill='%23FFD3D8'/%3E%3Ccircle cx='45' cy='45' r='2.5' fill='%23D4E5E4'/%3E%3Ccircle cx='35' cy='35' r='2' fill='%23C5D9E3'/%3E%3Ccircle cx='25' cy='25' r='2.5' fill='%23FFE5B4'/%3E%3Ccircle cx='15' cy='15' r='3' fill='%23D4C4B0'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornament-corner-bl {
+  width: 150px;
+  height: 150px;
+  bottom: 40px;
+  left: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 10 10 Q 10 90 90 90' stroke='%23FFD3D8' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='15' cy='15' r='3' fill='%23D5C8D9'/%3E%3Ccircle cx='25' cy='25' r='2' fill='%23C5D9E3'/%3E%3Ccircle cx='35' cy='35' r='2.5' fill='%23FFE5B4'/%3E%3Ccircle cx='45' cy='45' r='2' fill='%23D4E5E4'/%3E%3Ccircle cx='55' cy='55' r='2.5' fill='%23FFD3D8'/%3E%3Ccircle cx='65' cy='65' r='2' fill='%23C5A880'/%3E%3Ccircle cx='75' cy='75' r='2.5' fill='%23D5C8D9'/%3E%3Ccircle cx='85' cy='85' r='3' fill='%23FFD3D8'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornament-corner-br {
+  width: 150px;
+  height: 150px;
+  bottom: 40px;
+  right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 90 10 Q 90 90 10 90' stroke='%23D5C8D9' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='85' cy='15' r='3' fill='%23C5D9E3'/%3E%3Ccircle cx='75' cy='25' r='2' fill='%23FFE5B4'/%3E%3Ccircle cx='65' cy='35' r='2.5' fill='%23FFD3D8'/%3E%3Ccircle cx='55' cy='45' r='2' fill='%23D4E5E4'/%3E%3Ccircle cx='45' cy='55' r='2.5' fill='%23C5A880'/%3E%3Ccircle cx='35' cy='65' r='2' fill='%23C5D9E3'/%3E%3Ccircle cx='25' cy='75' r='2.5' fill='%23FFE5B4'/%3E%3Ccircle cx='15' cy='85' r='3' fill='%23D5C8D9'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Decorative dividers */
+.ornament-divider-top {
+  width: 300px;
+  height: 80px;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 50'%3E%3Cpath d='M 10 25 Q 50 10 100 25 T 190 25' stroke='%23C5A880' stroke-width='1' fill='none'/%3E%3Ccircle cx='100' cy='25' r='4' fill='%23FFD3D8'/%3E%3Cpath d='M 95 20 Q 100 15 105 20' stroke='%23D5C8D9' stroke-width='1' fill='none'/%3E%3Cpath d='M 95 30 Q 100 35 105 30' stroke='%23D5C8D9' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ornament-divider-bottom {
+  width: 300px;
+  height: 80px;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 50'%3E%3Cpath d='M 10 25 Q 50 40 100 25 T 190 25' stroke='%23D4C4B0' stroke-width='1' fill='none'/%3E%3Ccircle cx='50' cy='32' r='3' fill='%23C5D9E3'/%3E%3Ccircle cx='100' cy='25' r='4' fill='%23D5C8D9'/%3E%3Ccircle cx='150' cy='32' r='3' fill='%23FFE5B4'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .hero-images-collage {
+    max-width: 100%;
+    height: 60vh;
+    width: 100%;
+  }
+
+  .hero-image-main {
+    width: 80%;
+  }
+
+  .hero-image-main img {
+    max-height: 35vh;
+  }
+
+  .hero-image-accent {
+    bottom: -3rem;
+    right: -1rem;
+  }
+
+  .hero-image-accent img {
+    max-height: 35vh;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .names {
+    font-size: 4rem;
+  }
+
+  .monogram-circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .monogram-circle .initial {
+    font-size: 3rem;
+  }
+
+  .monogram-circle .ampersand {
+    font-size: 2.5rem;
+  }
+
+  .date p {
+    font-size: 1.8rem;
+  }
+
+  .date-line {
+    width: 50px;
+  }
+
+  /* Hide some ornaments on mobile for cleaner look */
+  .ornament-divider-top,
+  .ornament-divider-bottom {
+    display: none;
+  }
+
+  .ornament-corner-tl,
+  .ornament-corner-tr,
+  .ornament-corner-bl,
+  .ornament-corner-br {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ornament-corner-tl {
+    top: 20px;
+    left: 10px;
+  }
+
+  .ornament-corner-tr {
+    top: 20px;
+    right: 10px;
+  }
+
+  .ornament-corner-bl {
+    bottom: 20px;
+    left: 10px;
+  }
+
+  .ornament-corner-br {
+    bottom: 20px;
+    right: 10px;
+  }
+}

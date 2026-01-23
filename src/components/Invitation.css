@@ -1,0 +1,136 @@
+.invitation {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFF8FA 0%, #FFFFFF 50%, #F8F9FA 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 2rem;
+  border-bottom: 1px solid rgba(213, 200, 217, 0.15);
+}
+
+.invitation-content {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.invitation-text {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 4rem 3rem;
+  border-radius: 20px;
+  box-shadow:
+    0 20px 60px rgba(213, 200, 217, 0.2),
+    0 8px 20px rgba(197, 168, 128, 0.1);
+  border: 1px solid rgba(255, 248, 250, 0.5);
+}
+
+.invitation-greeting {
+  font-family: 'Marck Script', cursive;
+  font-size: 2.5rem;
+  color: #C5A880;
+  margin: 0 0 1.5rem 0;
+  font-weight: 400;
+}
+
+.invitation-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #6B5B4D;
+  margin: 0 0 2rem 0;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.invitation-message {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #8B7355;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.invitation-signature {
+  margin-top: 3rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #8B7355;
+  font-weight: 300;
+}
+
+.invitation-signature p {
+  margin: 0.5rem 0;
+}
+
+.signature-names {
+  font-family: 'Marck Script', cursive;
+  font-size: 2rem;
+  color: #6B5B4D;
+  margin-top: 0.5rem;
+}
+
+/* Decorative hearts */
+.invitation-heart {
+  position: absolute;
+  font-size: 3rem;
+  color: #FFD3D8;
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heart-left {
+  top: 10%;
+  left: 10%;
+}
+
+.heart-right {
+  bottom: 15%;
+  right: 10%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .invitation {
+    padding: 3rem 1rem;
+    min-height: 60vh;
+  }
+
+  .invitation-text {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .invitation-greeting {
+    font-size: 2rem;
+  }
+
+  .invitation-main {
+    font-size: 1.5rem;
+  }
+
+  .invitation-message {
+    font-size: 1rem;
+  }
+
+  .signature-names {
+    font-size: 1.5rem;
+  }
+
+  .invitation-heart {
+    font-size: 2rem;
+  }
+
+  .heart-left {
+    top: 5%;
+    left: 5%;
+  }
+
+  .heart-right {
+    bottom: 10%;
+    right: 5%;
+  }
+}

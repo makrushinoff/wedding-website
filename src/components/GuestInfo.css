@@ -1,0 +1,164 @@
+.guest-info {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAFAFA;
+  padding: 6rem 2rem 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 211, 216, 0.15);
+}
+
+.guest-info-content {
+  max-width: 1200px;
+  width: 100%;
+  z-index: 2;
+}
+
+.guest-info-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #8B7355;
+  text-align: center;
+  margin: -1rem 0 3rem 0;
+}
+
+.info-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateX(10px);
+}
+
+.info-icon-wrapper {
+  min-width: 80px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  color: #FFFFFF;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #6B5B4D;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: 0.02em;
+}
+
+.info-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #8B7355;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Decorative ornaments */
+.info-ornament {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.ornament-compass-left {
+  width: 180px;
+  height: 180px;
+  top: 80px;
+  left: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23FFD3D8' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='%23D5C8D9' stroke-width='1' stroke-dasharray='2,2'/%3E%3Cpath d='M 50 10 L 55 45 L 50 50 L 45 45 Z' fill='%23C5D9E3'/%3E%3Cpath d='M 90 50 L 55 55 L 50 50 L 55 45 Z' fill='%23FFE5B4' opacity='0.7'/%3E%3Cpath d='M 50 90 L 45 55 L 50 50 L 55 55 Z' fill='%23D4E5E4' opacity='0.7'/%3E%3Cpath d='M 10 50 L 45 45 L 50 50 L 45 55 Z' fill='%23FFD3D8' opacity='0.7'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23C5A880'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornament-compass-right {
+  width: 160px;
+  height: 160px;
+  bottom: 80px;
+  right: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23C5D9E3' stroke-width='1.5'/%3E%3Cpath d='M 50 15 L 50 85 M 15 50 L 85 50' stroke='%23D5C8D9' stroke-width='1' stroke-dasharray='3,3'/%3E%3Ctext x='50' y='12' font-family='serif' font-size='12' fill='%23FFD3D8' text-anchor='middle'%3EN%3C/text%3E%3Ctext x='50' y='93' font-family='serif' font-size='12' fill='%23FFE5B4' text-anchor='middle'%3ES%3C/text%3E%3Ctext x='88' y='54' font-family='serif' font-size='12' fill='%23D4E5E4' text-anchor='middle'%3EE%3C/text%3E%3Ctext x='12' y='54' font-family='serif' font-size='12' fill='%23C5D9E3' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .guest-info {
+    padding: 5rem 1rem 3rem 1rem;
+  }
+
+  .info-list {
+    gap: 1.5rem;
+  }
+
+  .info-item {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-item:hover {
+    transform: translateX(0);
+  }
+
+  .info-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+  }
+
+  .info-icon {
+    font-size: 2rem;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+  }
+
+  .info-text {
+    font-size: 1rem;
+  }
+
+  .ornament-compass-left,
+  .ornament-compass-right {
+    display: none;
+  }
+}

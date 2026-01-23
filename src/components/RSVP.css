@@ -1,0 +1,223 @@
+.rsvp {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAFAFA;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(212, 228, 228, 0.15);
+}
+
+.rsvp-content {
+  max-width: 700px;
+  width: 100%;
+  z-index: 2;
+}
+
+.rsvp-card {
+  background: #FFFFFF;
+  border: 2px solid rgba(213, 200, 217, 0.3);
+  border-radius: 30px;
+  padding: 4rem 3rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(213, 200, 217, 0.2);
+}
+
+.rsvp-message {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #6B5B4D;
+  margin: 2rem 0 3rem 0;
+  line-height: 1.6;
+}
+
+.rsvp-button-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 2rem 0;
+}
+
+.rsvp-button {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #D5C8D9 0%, #C5B8C9 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 1.2rem 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(213, 200, 217, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rsvp-button:hover {
+  background: linear-gradient(135deg, #C5B8C9 0%, #B5A8B9 100%);
+  transform: translateY(-2px);
+}
+
+.rsvp-button:active {
+  transform: translateY(0);
+}
+
+.rsvp-button-icon {
+  font-size: 1.5rem;
+}
+
+.rsvp-tooltip {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(107, 91, 77, 0.95);
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rsvp-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(107, 91, 77, 0.95);
+}
+
+.rsvp-note {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #8B7355;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Heart decorations */
+.heart-decoration {
+  position: absolute;
+  font-size: 4rem;
+  color: rgba(255, 211, 216, 0.4);
+  pointer-events: none;
+  user-select: none;
+}
+
+.heart-1 {
+  top: 15%;
+  left: 10%;
+}
+
+.heart-2 {
+  bottom: 20%;
+  right: 10%;
+  font-size: 3rem;
+  color: rgba(197, 217, 227, 0.4);
+}
+
+/* Elegant romantic ornaments */
+.rsvp-ornament {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.ornament-heart-wreath {
+  width: 180px;
+  height: 180px;
+  top: 50px;
+  left: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23D5C8D9' stroke-width='1' stroke-dasharray='2,2'/%3E%3Cpath d='M 50 35 Q 40 25 30 30 Q 25 35 30 42 L 50 55 L 70 42 Q 75 35 70 30 Q 60 25 50 35' fill='%23FFD3D8' opacity='0.6'/%3E%3Ccircle cx='35' cy='50' r='3' fill='%23C5D9E3'/%3E%3Ccircle cx='65' cy='50' r='3' fill='%23FFE5B4'/%3E%3Ccircle cx='50' cy='70' r='3' fill='%23D4E5E4'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornament-love-vines {
+  width: 200px;
+  height: 200px;
+  bottom: 50px;
+  right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 20 50 Q 30 30 50 40 Q 70 30 80 50' stroke='%23C5D9E3' stroke-width='1.5' fill='none'/%3E%3Cpath d='M 25 55 Q 35 40 50 50 Q 65 40 75 55' stroke='%23D4C4B0' stroke-width='1' fill='none'/%3E%3Ccircle cx='30' cy='45' r='4' fill='%23FFD3D8'/%3E%3Ccircle cx='50' cy='45' r='5' fill='%23D5C8D9' opacity='0.7'/%3E%3Ccircle cx='70' cy='45' r='4' fill='%23FFE5B4'/%3E%3Cpath d='M 28 70 L 32 75 L 28 80' stroke='%23C5A880' stroke-width='1' fill='none'/%3E%3Cpath d='M 48 65 L 52 70 L 48 75' stroke='%23C5A880' stroke-width='1' fill='none'/%3E%3Cpath d='M 68 70 L 72 75 L 68 80' stroke='%23C5A880' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornament-flourish-left {
+  width: 250px;
+  height: 120px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 80'%3E%3Cpath d='M 10 40 Q 30 20 50 40 Q 70 60 90 40 Q 110 20 130 40' stroke='%23D4C4B0' stroke-width='1.2' fill='none'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%23FFD3D8'/%3E%3Ccircle cx='70' cy='50' r='3' fill='%23D5C8D9'/%3E%3Ccircle cx='110' cy='30' r='3' fill='%23C5D9E3'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornament-flourish-right {
+  width: 250px;
+  height: 120px;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 80'%3E%3Cpath d='M 140 40 Q 120 60 100 40 Q 80 20 60 40 Q 40 60 20 40' stroke='%23C5A880' stroke-width='1.2' fill='none'/%3E%3Ccircle cx='120' cy='50' r='3' fill='%23FFE5B4'/%3E%3Ccircle cx='80' cy='30' r='3' fill='%23D4E5E4'/%3E%3Ccircle cx='40' cy='50' r='3' fill='%23FFD3D8'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rsvp-card {
+    padding: 3rem 2rem;
+  }
+
+  .rsvp-message {
+    font-size: 1.1rem;
+  }
+
+  .rsvp-button {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+  }
+
+  .heart-decoration {
+    font-size: 3rem;
+  }
+
+  .heart-2 {
+    font-size: 2rem;
+  }
+
+  /* Adjust ornaments for mobile */
+  .ornament-flourish-left,
+  .ornament-flourish-right {
+    display: none;
+  }
+
+  .ornament-heart-wreath {
+    width: 120px;
+    height: 120px;
+    opacity: 0.4;
+  }
+
+  .ornament-love-vines {
+    width: 140px;
+    height: 140px;
+    opacity: 0.4;
+  }
+}
