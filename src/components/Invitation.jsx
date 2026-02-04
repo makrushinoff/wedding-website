@@ -8,7 +8,7 @@ const Invitation = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="invitation" ref={ref}>
+    <section className="invitation" id="invitation" ref={ref}>
       <motion.div
         className="invitation-content"
         initial={{ opacity: 0, y: 30 }}
@@ -24,17 +24,15 @@ const Invitation = () => {
           <p className="invitation-greeting">Дорогі наші!</p>
 
           <p className="invitation-main">
-            З великою радістю запрошуємо вас на наше весілля!
+            Любов привела нас до одного з найщасливіших днів у нашому житті.
           </p>
 
           <p className="invitation-message">
-            Цей день стане особливим для нас, і ми будемо щасливі
-            поділитися цим святом з найдорожчими нам людьми.
+            Запрошуємо вас на наше весілля, щоб разом відсвяткувати початок нашої спільної історії.
           </p>
 
           <p className="invitation-message">
-            Приєднуйтесь до нас, щоб разом відсвяткувати початок
-            нашого спільного життя, наповненого любов'ю та щастям!
+            Ваша присутність зробить цей день ще теплішим і незабутнім.
           </p>
 
           <motion.div
@@ -48,7 +46,7 @@ const Invitation = () => {
           </motion.div>
         </motion.div>
 
-        {/* Decorative elements */}
+        {/* Decorative hearts */}
         <motion.div
           className="invitation-heart heart-left"
           animate={{

@@ -1,10 +1,11 @@
+/* Mobile-first base styles */
 .color-palette {
-  min-height: auto;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #FFFFFF;
-  padding: 3rem 2rem;
+  padding: 3rem 1.25rem;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 211, 216, 0.15);
@@ -18,7 +19,7 @@
 
 .palette-subtitle {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
   color: #6B5B4D;
   margin: -1rem 0 3rem 0;
@@ -26,7 +27,7 @@
 
 .palette-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin: 2rem auto;
   max-width: 700px;
@@ -47,11 +48,24 @@
 
 .color-name {
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: #6B5B4D;
   margin-top: 0.8rem;
   letter-spacing: 0.05em;
+}
+
+.dresscode-note {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #8B7355;
+  line-height: 1.8;
+  margin-top: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* Elegant lace-like patterns */
@@ -62,6 +76,7 @@
 }
 
 .ornament-lace-left {
+  display: none;
   width: 150px;
   height: 250px;
   top: 50%;
@@ -73,6 +88,7 @@
 }
 
 .ornament-lace-right {
+  display: none;
   width: 150px;
   height: 250px;
   top: 50%;
@@ -84,7 +100,7 @@
 }
 
 .ornament-frame-top {
-  width: 500px;
+  width: 90%;
   height: 80px;
   top: 10px;
   left: 50%;
@@ -96,7 +112,7 @@
 }
 
 .ornament-frame-bottom {
-  width: 500px;
+  width: 90%;
   height: 80px;
   bottom: 10px;
   left: 50%;
@@ -107,42 +123,44 @@
   background-position: center;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .palette-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .palette-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.8rem;
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .color-palette {
+    padding: 4rem 1.5rem;
   }
 
   .palette-subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
   }
 
   .color-name {
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .palette-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.6rem;
+    font-size: 0.9rem;
   }
 
-  /* Hide ornaments on small screens */
   .ornament-lace-left,
   .ornament-lace-right {
-    display: none;
+    display: block;
   }
 
   .ornament-frame-top,
   .ornament-frame-bottom {
-    width: 90%;
+    width: 500px;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .color-palette {
+    padding: 5rem 2rem;
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
   }
 }

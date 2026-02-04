@@ -1,0 +1,474 @@
+.envelope-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F5EEE6 0%, #FFE5B4 50%, #FFD3D8 100%);
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.envelope-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.envelope-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Envelope Wrapper */
+.envelope-wrapper {
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.envelope {
+  width: 400px;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+}
+
+.envelope:hover {
+  transform: translateY(-10px);
+}
+
+/* Envelope Back */
+.envelope-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.envelope-triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 125px 200px;
+  border-color: #FFD3D8 transparent transparent transparent;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Envelope Flap */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(135deg, #FFD3D8, #D5C8D9);
+  transform-origin: top;
+  transform-style: preserve-3d;
+  border-radius: 10px 10px 0 0;
+  z-index: 3;
+  transition: transform 0.3s;
+}
+
+.heart-seal {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  z-index: 4;
+}
+
+.heart-seal svg {
+  color: #FF69B4;
+  font-size: 24px;
+}
+
+/* Letter Peek */
+.letter-peek {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 80%;
+  background: #FFFAF0;
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 1;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.letter-content-preview {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.monogram-preview {
+  font-family: 'Marck Script', cursive;
+  font-size: 32px;
+  color: #C5A880;
+  margin-bottom: 10px;
+}
+
+.text-preview {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #8B7355;
+}
+
+/* Envelope Body */
+.envelope-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #FFF;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.envelope-text {
+  text-align: center;
+}
+
+.envelope-names {
+  font-family: 'Marck Script', cursive;
+  font-size: 28px;
+  color: #6B5B4D;
+  margin-bottom: 5px;
+}
+
+.envelope-hint {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #8B7355;
+  opacity: 0.7;
+}
+
+/* Opened Invitation */
+.opened-invitation {
+  width: 600px;
+  max-width: 90vw;
+  background: #FFFAF0;
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative Frame */
+.invitation-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.corner-decoration {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #C5A880;
+  opacity: 0.3;
+}
+
+.corner-decoration.top-left {
+  top: 20px;
+  left: 20px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 20px;
+}
+
+.corner-decoration.top-right {
+  top: 20px;
+  right: 20px;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 20px;
+}
+
+.corner-decoration.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 20px;
+}
+
+.corner-decoration.bottom-right {
+  bottom: 20px;
+  right: 20px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 20px;
+}
+
+/* Invitation Content */
+.invitation-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.monogram-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD3D8, #D5C8D9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.monogram-circle span {
+  font-family: 'Marck Script', cursive;
+  font-size: 36px;
+  color: #FFF;
+}
+
+.invitation-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #6B5B4D;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.invitation-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.bride-name,
+.groom-name {
+  font-family: 'Marck Script', cursive;
+  font-size: 48px;
+  color: #C5A880;
+}
+
+.and {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #8B7355;
+}
+
+.invitation-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.date-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C5A880, transparent);
+}
+
+.date {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #6B5B4D;
+}
+
+.invitation-message {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #6B5B4D;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.invitation-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #8B7355;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.invitation-details {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 30px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+}
+
+.detail-item {
+  text-align: center;
+}
+
+.detail-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #6B5B4D;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-time {
+  font-family: 'Marck Script', cursive;
+  font-size: 28px;
+  color: #C5A880;
+  margin-bottom: 8px;
+}
+
+.detail-location {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #8B7355;
+  max-width: 200px;
+}
+
+.detail-divider {
+  color: #C5A880;
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+.invitation-footer {
+  font-family: 'Marck Script', cursive;
+  font-size: 24px;
+  color: #C5A880;
+  margin-top: 20px;
+}
+
+/* Floating Hearts */
+.floating-hearts {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
+  pointer-events: none;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 105, 180, 0.6);
+}
+
+.floating-heart svg {
+  font-size: 16px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .envelope {
+    width: 320px;
+    height: 200px;
+  }
+
+  .envelope-triangle {
+    border-width: 100px 160px;
+  }
+
+  .opened-invitation {
+    padding: 40px 25px;
+  }
+
+  .bride-name,
+  .groom-name {
+    font-size: 36px;
+  }
+
+  .invitation-details {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .detail-divider {
+    display: none;
+  }
+
+  .monogram-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .monogram-circle span {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .envelope {
+    width: 280px;
+    height: 175px;
+  }
+
+  .envelope-triangle {
+    border-width: 87.5px 140px;
+  }
+
+  .envelope-names {
+    font-size: 24px;
+  }
+
+  .bride-name,
+  .groom-name {
+    font-size: 32px;
+  }
+
+  .invitation-names {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .and {
+    font-size: 20px;
+  }
+}

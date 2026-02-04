@@ -1,13 +1,15 @@
+/* Mobile-first base styles */
 .invitation {
-  min-height: 70vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #FFF8FA 0%, #FFFFFF 50%, #F8F9FA 100%);
+  background: linear-gradient(135deg,  #FFFFFF 50%, #FFF8FA 100%);
   position: relative;
   overflow: hidden;
-  padding: 5rem 2rem;
+  padding: 3rem 1.25rem;
   border-bottom: 1px solid rgba(213, 200, 217, 0.15);
+  box-sizing: border-box;
 }
 
 .invitation-content {
@@ -20,7 +22,7 @@
 .invitation-text {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  padding: 4rem 3rem;
+  padding: 2rem 1.5rem;
   border-radius: 20px;
   box-shadow:
     0 20px 60px rgba(213, 200, 217, 0.2),
@@ -30,32 +32,32 @@
 
 .invitation-greeting {
   font-family: 'Marck Script', cursive;
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   color: #C5A880;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   font-weight: 400;
 }
 
 .invitation-main {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: #6B5B4D;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.5rem 0;
   font-weight: 500;
   line-height: 1.4;
 }
 
 .invitation-message {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #8B7355;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.25rem 0;
   line-height: 1.8;
   font-weight: 300;
 }
 
 .invitation-signature {
-  margin-top: 3rem;
+  margin-top: 2rem;
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   color: #8B7355;
@@ -68,7 +70,7 @@
 
 .signature-names {
   font-family: 'Marck Script', cursive;
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: #6B5B4D;
   margin-top: 0.5rem;
 }
@@ -76,7 +78,7 @@
 /* Decorative hearts */
 .invitation-heart {
   position: absolute;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: #FFD3D8;
   opacity: 0.3;
   pointer-events: none;
@@ -84,24 +86,23 @@
 }
 
 .heart-left {
-  top: 10%;
-  left: 10%;
+  top: 5%;
+  left: 5%;
 }
 
 .heart-right {
-  bottom: 15%;
-  right: 10%;
+  bottom: 10%;
+  right: 5%;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Tablet - 768px */
+@media (min-width: 768px) {
   .invitation {
-    padding: 3rem 1rem;
-    min-height: 60vh;
+    padding: 4rem 1.5rem;
   }
 
   .invitation-text {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 2rem;
   }
 
   .invitation-greeting {
@@ -123,14 +124,80 @@
   .invitation-heart {
     font-size: 2rem;
   }
+}
+
+/* Large tablet - 1024px */
+@media (min-width: 1024px) {
+  .invitation {
+    padding: 4rem 1.5rem;
+    min-height: 70vh;
+  }
+
+  .invitation-text {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .invitation-greeting {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .invitation-main {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .invitation-message {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .signature-names {
+    font-size: 1.8rem;
+  }
+
+  .invitation-signature {
+    margin-top: 2.5rem;
+  }
+}
+
+/* Desktop - 1280px */
+@media (min-width: 1280px) {
+  .invitation {
+    padding: 5rem 2rem;
+  }
+
+  .invitation-text {
+    padding: 4rem 3rem;
+  }
+
+  .invitation-greeting {
+    font-size: 2.5rem;
+  }
+
+  .invitation-main {
+    font-size: 2rem;
+  }
+
+  .invitation-signature {
+    margin-top: 3rem;
+  }
+
+  .signature-names {
+    font-size: 2rem;
+  }
+
+  .invitation-heart {
+    font-size: 3rem;
+  }
 
   .heart-left {
-    top: 5%;
-    left: 5%;
+    top: 10%;
+    left: 10%;
   }
 
   .heart-right {
-    bottom: 10%;
-    right: 5%;
+    bottom: 15%;
+    right: 10%;
   }
 }

@@ -2,61 +2,24 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import './GuestInfo.css';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import ChildCareIcon from '@mui/icons-material/ChildCare';
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import photo1 from '../assets/IMG_1196.JPG';
+import photo2 from '../assets/IMG_1197.JPG';
+import photo3 from '../assets/IMG_1198.JPG';
+import photo4 from '../assets/IMG_1199.JPG';
+import photo5 from '../assets/IMG_1200.JPG';
 
 const GuestInfo = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const infoCards = [
-    {
-      title: 'Як дістатись',
-      icon: DirectionsCarIcon,
-      text: 'Літепло знаходиться в Тернопільській області, 30 км від Тернополя. Безкоштовна парковка на території. Можемо організувати трансфер для гостей - напишіть нам!',
-      color: '#FFD3D8'
-    },
-    {
-      title: 'Для дітей',
-      icon: ChildCareIcon,
-      text: 'Діти дуже вітаються! Буде окрема дитяча зона з аніматорами та іграми. Дитяче меню на банкеті.',
-      color: '#FFE5B4'
-    },
-    {
-      title: 'Фото та відео',
-      icon: PhotoCameraIcon,
-      text: 'У нас буде професійний фотограф та відеограф. Робіть фото на свій смартфон скільки завгодно! Просимо лише утриматись від спалаху під час церемонії.',
-      color: '#D5C8D9'
-    },
-    {
-      title: 'Дрес-код',
-      icon: CheckroomIcon,
-      text: 'Святковий casual стиль. Ми будемо раді, якщо ваш образ буде в пастельних тонах (рожевий, м\'ятний, блакитний, беж, лаванда). Святкування буде на відкритому повітрі - врахуйте це при виборі взуття.',
-      color: '#D4E5D4'
-    }
+  const photos = [
+    { src: photo1, alt: 'Фото з племінниками 1' },
+    { src: photo2, alt: 'Фото з племінниками 2' },
+    { src: photo3, alt: 'Фото з племінниками 3' },
+    { src: photo4, alt: 'Фото з племінниками 4' },
+    { src: photo5, alt: 'Фото з племінниками 5' }
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
-    }
-  };
 
   return (
     <section className="guest-info" id="info" ref={ref}>
@@ -66,41 +29,113 @@ const GuestInfo = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="section-title">Корисна інформація</h2>
-        <p className="guest-info-subtitle">
-          Все, що вам потрібно знати перед святкуванням
-        </p>
+        <motion.div
+          className="heart-icon-wrapper"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <FavoriteIcon sx={{ fontSize: 60, color: '#FFD3D8' }} />
+        </motion.div>
+
+        <h2 className="section-title">Діти - дуже бажані гості на нашому святі</h2>
 
         <motion.div
-          className="info-list"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          className="message-box"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {infoCards.map((card, index) => {
-            const IconComponent = card.icon;
-            return (
-              <motion.div
-                key={index}
-                className="info-item"
-                variants={cardVariants}
-              >
-                <div className="info-icon-wrapper" style={{ backgroundColor: card.color }}>
-                  <IconComponent className="info-icon" sx={{ fontSize: 40, color: '#FFFFFF' }} />
-                </div>
-                <div className="info-content">
-                  <h3 className="info-title">{card.title}</h3>
-                  <p className="info-text">{card.text}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+          <p className="main-message">
+            Ми дуже любимо дітей та не уявляємо наше святкування без них
+            Тож будемо вельми вдячні, якщо батьки не залишать їх сумувати вдома!
+          </p>
+          <p className="sub-message">
+            Святкування буде веселим для всіх, і ми подбаємо про те,
+            щоб малечі було цікаво та комфортно, а батьки мали час трохи відпочити.
+          </p>
         </motion.div>
-      </motion.div>
 
-      {/* Decorative elements */}
-      <div className="info-ornament ornament-compass-left"></div>
-      <div className="info-ornament ornament-compass-right"></div>
+        {photos.length > 0 && (
+          <>
+            {/* Фотографії зліва */}
+            <motion.div
+              className="photos-stack photos-left"
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              {photos.slice(0, Math.ceil(photos.length / 2)).map((photo, index) => (
+                <motion.div
+                  key={`left-${index}`}
+                  className="photo-item"
+                  style={{ zIndex: photos.length - index }}
+                  initial={{ opacity: 0, rotate: -5 + index * 2 }}
+                  animate={isInView ? {
+                    opacity: 1,
+                    rotate: -5 + index * 2
+                  } : {
+                    opacity: 0,
+                    rotate: -5 + index * 2
+                  }}
+                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                  whileHover={{
+                    scale: 1.15,
+                    rotate: 0,
+                    zIndex: 100,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Фотографії справа */}
+            <motion.div
+              className="photos-stack photos-right"
+              initial={{ opacity: 0, x: 50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              {photos.slice(Math.ceil(photos.length / 2)).map((photo, index) => (
+                <motion.div
+                  key={`right-${index}`}
+                  className="photo-item"
+                  style={{ zIndex: photos.length - index }}
+                  initial={{ opacity: 0, rotate: 5 - index * 2 }}
+                  animate={isInView ? {
+                    opacity: 1,
+                    rotate: 5 - index * 2
+                  } : {
+                    opacity: 0,
+                    rotate: 5 - index * 2
+                  }}
+                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                  whileHover={{
+                    scale: 1.15,
+                    rotate: 0,
+                    zIndex: 100,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </>
+        )}
+      </motion.div>
     </section>
   );
 };

@@ -1,10 +1,11 @@
+/* Mobile-first base styles */
 .rsvp {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #FAFAFA;
-  padding: 4rem 2rem;
+  padding: 3rem 1.25rem;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid rgba(212, 228, 228, 0.15);
@@ -20,14 +21,14 @@
   background: #FFFFFF;
   border: 2px solid rgba(213, 200, 217, 0.3);
   border-radius: 30px;
-  padding: 4rem 3rem;
+  padding: 3rem 2rem;
   text-align: center;
   box-shadow: 0 10px 40px rgba(213, 200, 217, 0.2);
 }
 
 .rsvp-message {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
   color: #6B5B4D;
   margin: 2rem 0 3rem 0;
@@ -42,7 +43,7 @@
 
 .rsvp-button {
   font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -50,7 +51,7 @@
   background: #A8C9A8;
   border: none;
   border-radius: 50px;
-  padding: 1.2rem 3rem;
+  padding: 1rem 2.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(168, 201, 168, 0.5);
@@ -110,25 +111,27 @@
   font-style: italic;
 }
 
-/* Heart decorations */
-.heart-decoration {
+/* Wedding icon decorations */
+.rsvp-wedding-icon {
   position: absolute;
-  font-size: 4rem;
-  color: rgba(255, 211, 216, 0.4);
+  width: 70px;
+  height: 70px;
+  opacity: 0.15;
   pointer-events: none;
   user-select: none;
+  filter: brightness(0) saturate(100%) invert(66%) sepia(12%) saturate(844%) hue-rotate(327deg) brightness(91%) contrast(87%);
 }
 
-.heart-1 {
+.icon-1 {
   top: 15%;
   left: 10%;
 }
 
-.heart-2 {
+.icon-2 {
   bottom: 20%;
   right: 10%;
-  font-size: 3rem;
-  color: rgba(197, 217, 227, 0.4);
+  width: 60px;
+  height: 60px;
 }
 
 /* Elegant romantic ornaments */
@@ -139,26 +142,29 @@
 }
 
 .ornament-heart-wreath {
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   top: 50px;
   left: 40px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23D5C8D9' stroke-width='1' stroke-dasharray='2,2'/%3E%3Cpath d='M 50 35 Q 40 25 30 30 Q 25 35 30 42 L 50 55 L 70 42 Q 75 35 70 30 Q 60 25 50 35' fill='%23FFD3D8' opacity='0.6'/%3E%3Ccircle cx='35' cy='50' r='3' fill='%23C5D9E3'/%3E%3Ccircle cx='65' cy='50' r='3' fill='%23FFE5B4'/%3E%3Ccircle cx='50' cy='70' r='3' fill='%23D4E5E4'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
+  opacity: 0.4;
 }
 
 .ornament-love-vines {
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   bottom: 50px;
   right: 40px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 20 50 Q 30 30 50 40 Q 70 30 80 50' stroke='%23C5D9E3' stroke-width='1.5' fill='none'/%3E%3Cpath d='M 25 55 Q 35 40 50 50 Q 65 40 75 55' stroke='%23D4C4B0' stroke-width='1' fill='none'/%3E%3Ccircle cx='30' cy='45' r='4' fill='%23FFD3D8'/%3E%3Ccircle cx='50' cy='45' r='5' fill='%23D5C8D9' opacity='0.7'/%3E%3Ccircle cx='70' cy='45' r='4' fill='%23FFE5B4'/%3E%3Cpath d='M 28 70 L 32 75 L 28 80' stroke='%23C5A880' stroke-width='1' fill='none'/%3E%3Cpath d='M 48 65 L 52 70 L 48 75' stroke='%23C5A880' stroke-width='1' fill='none'/%3E%3Cpath d='M 68 70 L 72 75 L 68 80' stroke='%23C5A880' stroke-width='1' fill='none'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
+  opacity: 0.4;
 }
 
 .ornament-flourish-left {
+  display: none;
   width: 250px;
   height: 120px;
   top: 50%;
@@ -170,6 +176,7 @@
 }
 
 .ornament-flourish-right {
+  display: none;
   width: 250px;
   height: 120px;
   top: 50%;
@@ -180,44 +187,59 @@
   background-repeat: no-repeat;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .rsvp {
+    padding: 4rem 1.5rem;
+  }
+
   .rsvp-card {
-    padding: 3rem 2rem;
+    padding: 4rem 3rem;
   }
 
   .rsvp-message {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .rsvp-button {
-    font-size: 1.1rem;
-    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    padding: 1.2rem 3rem;
   }
 
-  .heart-decoration {
-    font-size: 3rem;
+  .rsvp-wedding-icon {
+    width: 100px;
+    height: 100px;
   }
 
-  .heart-2 {
-    font-size: 2rem;
-  }
-
-  /* Adjust ornaments for mobile */
-  .ornament-flourish-left,
-  .ornament-flourish-right {
-    display: none;
+  .icon-2 {
+    width: 80px;
+    height: 80px;
   }
 
   .ornament-heart-wreath {
-    width: 120px;
-    height: 120px;
-    opacity: 0.4;
+    width: 180px;
+    height: 180px;
+    opacity: 0.6;
   }
 
   .ornament-love-vines {
-    width: 140px;
-    height: 140px;
-    opacity: 0.4;
+    width: 200px;
+    height: 200px;
+    opacity: 0.6;
   }
+
+  .ornament-flourish-left,
+  .ornament-flourish-right {
+    display: block;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  /* No additional changes needed, existing styles work well */
+}
+
+/* Large Desktop: 1280px and up */
+@media (min-width: 1280px) {
+  /* No additional changes needed, existing styles work well */
 }

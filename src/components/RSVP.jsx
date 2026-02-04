@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import './RSVP.css';
+ import weddingIcon from '../assets/wedding.svg';
 
 const RSVP = () => {
   const ref = useRef(null);
@@ -85,9 +86,11 @@ const RSVP = () => {
           </motion.p>
         </motion.div>
 
-        {/* Decorative hearts */}
-        <motion.div
-          className="heart-decoration heart-1"
+        {/* Decorative wedding icons */}
+        <motion.img
+          src={weddingIcon}
+          alt="Wedding"
+          className="rsvp-wedding-icon icon-1"
           animate={{
             y: [0, -10, 0],
             rotate: [0, 5, 0]
@@ -97,11 +100,11 @@ const RSVP = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-        >
-          ♥
-        </motion.div>
-        <motion.div
-          className="heart-decoration heart-2"
+        />
+        <motion.img
+          src={weddingIcon}
+          alt="Wedding"
+          className="rsvp-wedding-icon icon-2"
           animate={{
             y: [0, -15, 0],
             rotate: [0, -5, 0]
@@ -112,9 +115,7 @@ const RSVP = () => {
             ease: "easeInOut",
             delay: 0.5
           }}
-        >
-          ♥
-        </motion.div>
+        />
 
         {/* Elegant romantic ornaments */}
         <div className="rsvp-ornament ornament-heart-wreath"></div>

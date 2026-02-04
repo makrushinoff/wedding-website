@@ -1,0 +1,150 @@
+/* Mobile-first base styles */
+.photo-upload {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 50%, #FFF8FA 100%);
+  padding: 3rem 1.25rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 211, 216, 0.15);
+}
+
+.photo-upload-content {
+  max-width: 700px;
+  width: 100%;
+  z-index: 2;
+}
+
+.photo-upload-card {
+  background: #FFFFFF;
+  border: 2px solid rgba(197, 217, 227, 0.3);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(197, 217, 227, 0.2);
+}
+
+.photo-icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C5D9E3 0%, #B5C9D3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 8px 30px rgba(197, 217, 227, 0.4);
+}
+
+.photo-upload-message {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #6B5B4D;
+  margin: 2rem 0 3rem 0;
+  line-height: 1.6;
+}
+
+.upload-button {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #C5D9E3 0%, #B5C9D3 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(197, 217, 227, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.upload-button:hover {
+  background: linear-gradient(135deg, #B5C9D3 0%, #A5B9C3 100%);
+  transform: translateY(-2px);
+}
+
+.upload-button:active {
+  transform: translateY(0);
+}
+
+.photo-upload-note {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #8B7355;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Wedding icon decorations */
+.photo-wedding-icon {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  opacity: 0.15;
+  pointer-events: none;
+  user-select: none;
+  filter: brightness(0) saturate(100%) invert(66%) sepia(12%) saturate(844%) hue-rotate(327deg) brightness(91%) contrast(87%);
+}
+
+.icon-1 {
+  top: 15%;
+  left: 8%;
+}
+
+.icon-2 {
+  bottom: 20%;
+  right: 8%;
+  width: 60px;
+  height: 60px;
+}
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .photo-upload {
+    min-height: 80vh;
+    padding: 4rem 1.5rem;
+  }
+
+  .photo-upload-card {
+    padding: 4rem 3rem;
+  }
+
+  .photo-icon-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .photo-upload-message {
+    font-size: 1.2rem;
+  }
+
+  .upload-button {
+    font-size: 1.3rem;
+    padding: 1.2rem 3rem;
+  }
+
+  .photo-wedding-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .icon-2 {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .photo-upload {
+    padding: 5rem 2rem;
+  }
+}

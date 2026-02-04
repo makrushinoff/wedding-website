@@ -50,9 +50,9 @@ const ColorPalette = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="section-title">Кольорова гама</h2>
+        <h2 className="section-title">Дрес-код</h2>
         <p className="palette-subtitle">
-          Ми будемо раді, якщо ваш образ включатиме ці кольори
+          Святковий casual стиль у пастельних тонах
         </p>
 
         <motion.div
@@ -75,6 +75,16 @@ const ColorPalette = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        <motion.p
+          className="dresscode-note"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          Ми будемо раді, якщо ваш образ буде в цих кольорах.
+          Святкування буде на відкритому повітрі — врахуйте це при виборі взуття.
+        </motion.p>
       </motion.div>
 
       {/* Elegant lace-like patterns */}
