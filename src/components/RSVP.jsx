@@ -27,10 +27,10 @@ const RSVP = () => {
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="section-title">Підтвердження присутності</h2>
+          <h2 className="section-title">Анкета гостя</h2>
 
           <p className="rsvp-message">
-            Будь ласка, повідомте нас про вашу участь до 1 травня 2026
+            Просимо вас заповнити форму, де ви зможете підтвердити свою присутність на святі, та дати нам знати про свої вподобання
           </p>
 
           <motion.div className="rsvp-button-wrapper">
@@ -43,9 +43,9 @@ const RSVP = () => {
               whileTap={{ scale: 0.95 }}
               animate={{
                 boxShadow: [
-                  "0 4px 20px rgba(213, 200, 217, 0.3)",
-                  "0 8px 30px rgba(213, 200, 217, 0.5)",
-                  "0 4px 20px rgba(213, 200, 217, 0.3)"
+                  "0 4px 20px rgba(168, 201, 168, 0.5)",
+                  "0 8px 30px rgba(168, 201, 168, 0.7)",
+                  "0 4px 20px rgba(168, 201, 168, 0.5)"
                 ]
               }}
               transition={{
@@ -81,7 +81,7 @@ const RSVP = () => {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            У разі запитань звертайтеся за телефоном або через месенджери
+            Якщо у вас викинкли питання - ми завжди відкриті до вас, тому пишіть/дзвоніть!
           </motion.p>
         </motion.div>
 

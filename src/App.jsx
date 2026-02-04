@@ -5,7 +5,6 @@ import Details from './components/Details';
 import GuestInfo from './components/GuestInfo';
 import ColorPalette from './components/ColorPalette';
 import RSVP from './components/RSVP';
-import FAQ from './components/FAQ';
 import './App.css';
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
       <div id="rsvp">
         <RSVP />
       </div>
-      <FAQ />
     </div>
   );
 }
