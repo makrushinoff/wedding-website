@@ -2,7 +2,6 @@ import {motion} from 'framer-motion';
 import './Hero.css';
 import heroImage from '../assets/img_1.png';
 import ringImage from '../assets/img_4.png';
-import weddingIcon from '../assets/wedding.svg';
 
 const Hero = () => {
     return (

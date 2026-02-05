@@ -37,12 +37,14 @@ const Transfer = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <motion.h2 className="section-title" variants={itemVariants}>
-          Трансфер до локацій
-        </motion.h2>
-        <motion.p className="transfer-subtitle" variants={itemVariants}>
-          Оскільки локація знаходиться доволі далеко від Тернополя - ми організували безкоштовний трансфер для всіх гостей
-        </motion.p>
+        <div className="transfer-text">
+          <motion.h2 className="section-title" variants={itemVariants}>
+            Трансфер до локацій
+          </motion.h2>
+          <motion.p className="transfer-subtitle" variants={itemVariants}>
+            Оскільки локація знаходиться доволі далеко від Тернополя - ми організували безкоштовний трансфер для всіх гостей
+          </motion.p>
+        </div>
 
         <motion.div className="buses-container" variants={itemVariants}>
           {/* Автобус 1 */}

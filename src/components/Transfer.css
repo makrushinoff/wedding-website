@@ -12,6 +12,12 @@
   text-align: center;
 }
 
+.transfer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .transfer-subtitle {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
@@ -142,18 +148,31 @@
     padding: 4rem 1.5rem;
   }
 
+  .transfer-content {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .transfer-text {
+    padding-right: 1rem;
+  }
+
   .transfer-subtitle {
     font-size: 1.1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .buses-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .bus-section {
-    max-width: 450px;
+    max-width: 100%;
     padding: 2.5rem 2rem;
   }
 
@@ -168,16 +187,34 @@
   .bus-time {
     font-size: 1.1rem;
   }
+
+  .transfer-footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 3rem;
+  }
 }
 
 /* Desktop: 1024px and up */
 @media (min-width: 1024px) {
+  .transfer-content {
+    gap: 4rem;
+  }
+
   .buses-container {
-    flex-wrap: nowrap;
+    gap: 2rem;
   }
 }
 
 /* Large Desktop: 1280px and up */
 @media (min-width: 1280px) {
-  /* No additional changes needed, existing styles work well */
+  .buses-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .bus-section {
+    flex: 1;
+    max-width: none;
+  }
 }
