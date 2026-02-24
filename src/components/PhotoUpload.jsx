@@ -78,37 +78,6 @@ const PhotoUpload = () => {
             Папка відкриється в Google Drive. Підтримуються всі формати фото та відео
           </motion.p>
         </motion.div>
-
-        {/* Decorative wedding icons */}
-        <motion.img
-          src={weddingIcon}
-          alt="Wedding"
-          className="photo-wedding-icon icon-1"
-          animate={{
-            y: [0, -10, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.img
-          src={weddingIcon}
-          alt="Wedding"
-          className="photo-wedding-icon icon-2"
-          animate={{
-            y: [0, -15, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5
-          }}
-        />
       </motion.div>
     </section>
   );

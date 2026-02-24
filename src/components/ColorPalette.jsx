@@ -8,18 +8,15 @@ const ColorPalette = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const colors = [
-    { name: 'Беж', hex: '#F5EEE6', row: 1 },
-    { name: 'Рожевий', hex: '#FFD3D8', row: 1 },
-    { name: 'М\'ятний', hex: '#D4E5E4', row: 1 },
-    { name: 'Блакитний', hex: '#C5D9E3', row: 1 },
-    { name: 'Персиковий', hex: '#FFE5B4', row: 2 },
-    { name: 'Ванільний', hex: '#F5F3D0', row: 2 },
-    { name: 'Шавлієвий', hex: '#D4E5D4', row: 2 },
-    { name: 'Кремовий', hex: '#F5F0E8', row: 2 },
-    { name: 'Піщаний', hex: '#E5D8B4', row: 3 },
-    { name: 'Пудровий', hex: '#C5D9E3', row: 3 },
-    { name: 'Абрикос', hex: '#FFD4C4', row: 3 },
-    { name: 'Лавандовий', hex: '#D5C8D9', row: 3 }
+    { name: 'Бежевий', hex: '#F5EEE6'},
+    { name: 'Лимонний', hex: '#F5F3D0'},
+    { name: 'Пудровий', hex: '#EBCFC5' },
+    { name: 'Рожевий', hex: '#FFD3D8' },
+    { name: 'Лавандовий', hex: '#D5C8D9' },
+    { name: 'Блакитний', hex: '#C5D9E3' },
+    { name: 'М\'ятний', hex: '#D4E5E4' },
+    { name: 'Шавлієвий', hex: '#D4E5D4'},
+
   ];
 
   const containerVariants = {
@@ -70,28 +67,13 @@ const ColorPalette = () => {
               <div
                 className="color-box"
                 style={{ backgroundColor: color.hex }}
-              ></div>
+              >
+              </div>
               <p className="color-name">{color.name}</p>
             </motion.div>
           ))}
         </motion.div>
-
-        <motion.p
-          className="dresscode-note"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          Ми будемо раді, якщо ваш образ буде в цих кольорах.
-          Святкування буде на відкритому повітрі — врахуйте це при виборі взуття.
-        </motion.p>
       </motion.div>
-
-      {/* Elegant lace-like patterns */}
-      <div className="palette-ornament ornament-lace-left"></div>
-      <div className="palette-ornament ornament-lace-right"></div>
-      <div className="palette-ornament ornament-frame-top"></div>
-      <div className="palette-ornament ornament-frame-bottom"></div>
     </section>
   );
 };

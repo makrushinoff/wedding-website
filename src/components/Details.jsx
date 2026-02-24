@@ -56,7 +56,7 @@ const Details = () => {
           >
             <h3 className="event-title">Вінчання</h3>
             <div className="event-info">
-              <p className="event-time">12:00</p>
+              <p className="event-time">13:20</p>
               <p className="event-label">Церква Св. Михаїла</p>
               <p className="event-location">Тернопіль</p>
               <motion.button
@@ -80,9 +80,9 @@ const Details = () => {
           >
             <h3 className="event-title">Святкування</h3>
             <div className="event-info">
-              <p className="event-time">14:00</p>
+              <p className="event-time">15:00</p>
               <p className="event-label">Літепло</p>
-              <p className="event-location">30 км від Тернополя</p>
+              <p className="event-location">с. Кобзарівка, Тернопільська обл.</p>
               <motion.button
                 className="location-button"
                 onClick={() => window.open('https://maps.google.com/?q=Літепло+Тернопільська+область', '_blank')}

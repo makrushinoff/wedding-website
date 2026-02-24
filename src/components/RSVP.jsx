@@ -85,43 +85,6 @@ const RSVP = () => {
             Якщо у вас викинкли питання - ми завжди відкриті до вас, тому пишіть/дзвоніть!
           </motion.p>
         </motion.div>
-
-        {/* Decorative wedding icons */}
-        <motion.img
-          src={weddingIcon}
-          alt="Wedding"
-          className="rsvp-wedding-icon icon-1"
-          animate={{
-            y: [0, -10, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.img
-          src={weddingIcon}
-          alt="Wedding"
-          className="rsvp-wedding-icon icon-2"
-          animate={{
-            y: [0, -15, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5
-          }}
-        />
-
-        {/* Elegant romantic ornaments */}
-        <div className="rsvp-ornament ornament-heart-wreath"></div>
-        <div className="rsvp-ornament ornament-love-vines"></div>
-        <div className="rsvp-ornament ornament-flourish-left"></div>
-        <div className="rsvp-ornament ornament-flourish-right"></div>
       </motion.div>
     </section>
   );

@@ -42,7 +42,7 @@ const Transfer = () => {
             Трансфер до локацій
           </motion.h2>
           <motion.p className="transfer-subtitle" variants={itemVariants}>
-            Оскільки локація знаходиться доволі далеко від Тернополя - ми організували безкоштовний трансфер для всіх гостей
+            Оскільки локація знаходиться доволі далеко від Тернополя - ми організували трансфер для всіх гостей. Рекомендуємо приїхати заздалегідь, щоб не пропустити автобус.
           </motion.p>
         </div>
 
@@ -59,7 +59,7 @@ const Transfer = () => {
             </div>
             <h3 className="bus-title">Підгайці</h3>
             <div className="bus-info">
-              <p className="bus-time">Час відправлення: 10:00</p>
+              <p className="bus-time">Час відправлення: 12:00</p>
               <p className="bus-note">Місце збору буде уточнено</p>
               <a
                 href="https://maps.google.com/maps?q=Pidhaytsi,+Ternopil+Oblast,+Ukraine"
@@ -85,10 +85,10 @@ const Transfer = () => {
             </div>
             <h3 className="bus-title">Тернопіль</h3>
             <div className="bus-info">
-              <p className="bus-time">Час відправлення: 11:30</p>
-              <p className="bus-note">Збір на Збаразькому кільці</p>
+              <p className="bus-time">Час відправлення: 14:00</p>
+              <p className="bus-note">Збір біля церкви св. Михаїла</p>
               <a
-                href="https://maps.google.com/maps?q=49.5570,25.5895"
+                  href="https://maps.google.com/?q=Церква+Св.+Михаїла+Тернопіль"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="location-link"

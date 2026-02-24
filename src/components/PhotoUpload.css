@@ -1,6 +1,6 @@
 /* Mobile-first base styles */
 .photo-upload {
-  min-height: 70vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +109,7 @@
 /* Tablet: 768px and up */
 @media (min-width: 768px) {
   .photo-upload {
-    min-height: 80vh;
+    height: 100vh;
     padding: 4rem 1.5rem;
   }
 
