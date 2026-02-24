@@ -12,7 +12,7 @@ const PhotoUpload = () => {
 
   const handleUploadClick = () => {
     // Тут буде посилання на Google Drive папку для завантаження
-    window.open('https://drive.google.com/drive/folders/YOUR_FOLDER_ID', '_blank');
+    window.open('https://drive.google.com/drive/folders/1AE2WdoXdb7N5lIP7QBtKHjq_Ks2DgvEt?usp=share_link', '_blank');
   };
 
   return (
