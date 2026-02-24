@@ -6,6 +6,12 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import weddingIcon from '../assets/wedding.svg';
 
+// Black and white photos
+import bwPhoto1 from '../assets/WAI-255-1.jpg';
+import bwPhoto2 from '../assets/WAI-295-1.jpg';
+import bwPhoto3 from '../assets/WAI-287-1.jpg';
+
+
 const PhotoUpload = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -28,6 +34,29 @@ const PhotoUpload = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8 }}
       >
+        {/* Black and white photos scrolling - above card on mobile */}
+        <motion.div
+          className="bw-photos-container"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <div className="bw-photos-track">
+            {/* Triple the photos for seamless loop */}
+            {[bwPhoto1, bwPhoto2, bwPhoto3, bwPhoto1, bwPhoto2, bwPhoto3, bwPhoto1, bwPhoto2, bwPhoto3].map((photo, index) => (
+              <div key={`bw-photo-${index}`} className="bw-photo-item">
+                <img
+                  src={photo}
+                  alt="Wedding memory"
+                  className="bw-photo"
+                  draggable="false"
+                  onContextMenu={(e) => e.preventDefault()}
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         <motion.div
           className="photo-upload-card"
           initial={{ opacity: 0, scale: 0.95 }}

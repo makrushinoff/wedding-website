@@ -9,6 +9,76 @@
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 211, 216, 0.15);
+  gap: 2rem;
+}
+
+/* Black and white photos scrolling */
+.bw-photos-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 2rem;
+}
+
+.bw-photos-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.bw-photos-track {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0 1rem;
+  animation: scroll-horizontal 25s linear infinite;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (160px + 1rem) * 3));
+  }
+}
+
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-1 * (220px + 1.5rem) * 3));
+  }
+}
+
+.bw-photo-item {
+  flex-shrink: 0;
+  width: 160px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(107, 91, 77, 0.25);
+  border: 4px solid #FFFFFF;
+  transition: transform 0.3s ease;
+}
+
+.bw-photo-item:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.bw-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
 }
 
 .photo-upload-content {
@@ -169,5 +239,81 @@
 @media (min-width: 1024px) {
   .photo-upload {
     padding: 5rem 2rem;
+  }
+
+  .bw-photos-container {
+    position: absolute;
+    left: 5%;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    overflow-x: visible;
+    overflow-y: hidden;
+    margin: 0;
+  }
+
+  .bw-photos-track {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+    animation: scroll-vertical 20s linear infinite;
+  }
+
+  .bw-photo-item {
+    width: 140px;
+    height: 160px;
+  }
+
+  @keyframes scroll-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-1 * (160px + 1.5rem) * 3));
+    }
+  }
+}
+
+/* Medium desktop: 1216px and up */
+@media (min-width: 1216px) {
+  .bw-photos-container {
+    width: 200px;
+    left: 5%;
+  }
+
+  .bw-photo-item {
+    width: 200px;
+    height: 220px;
+  }
+
+  @keyframes scroll-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-1 * (220px + 1.5rem) * 3));
+    }
+  }
+}
+
+/* Large desktop: 1400px and up */
+@media (min-width: 1400px) {
+  .bw-photos-container {
+    left: 8%;
+    width: 240px;
+  }
+
+  .bw-photo-item {
+    width: 240px;
+    height: 260px;
+  }
+
+  @keyframes scroll-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-1 * (260px + 1.5rem) * 3));
+    }
   }
 }

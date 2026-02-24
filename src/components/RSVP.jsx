@@ -2,7 +2,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import './RSVP.css';
- import weddingIcon from '../assets/wedding.svg';
+import Object1 from '../assets/Object.svg';
+import Object2 from '../assets/Object 2.svg';
+import Object3 from '../assets/Object 3.svg';
+import ChatGPTFlower4 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 4.svg';
+import ChatGPTFlower5 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 5.svg';
+import ChatGPTFlower6 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 6.svg';
+import ChatGPTFlower7 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 7.svg';
 
 const RSVP = () => {
   const ref = useRef(null);
@@ -14,8 +20,46 @@ const RSVP = () => {
     window.open('https://docs.google.com/forms/d/1nx1be-UkPJLqb_LaoALb4jTgTAhMy60mK_Zz-p3QgHY/viewform', '_blank');
   };
 
+  // Static positioned flowers
+  const flowers = [
+    { src: Object1, top: '10%', left: '5%', rotate: -15, scale: 0.8 },
+    { src: Object2, top: '15%', right: '8%', rotate: 20, scale: 0.9 },
+    { src: Object3, top: '35%', left: '3%', rotate: -25, scale: 0.7 },
+    { src: ChatGPTFlower4, top: '45%', right: '5%', rotate: 15, scale: 0.85 },
+    { src: ChatGPTFlower5, bottom: '35%', left: '7%', rotate: -20, scale: 0.75 },
+    { src: ChatGPTFlower6, bottom: '20%', right: '10%', rotate: 25, scale: 0.8 },
+    { src: ChatGPTFlower7, bottom: '10%', left: '12%', rotate: -10, scale: 0.7 },
+  ];
+
   return (
     <section className="rsvp" ref={ref}>
+      {/* Fixed decorative flowers */}
+      {flowers.map((flower, index) => (
+        <motion.img
+          key={index}
+          src={flower.src}
+          className="rsvp-flower"
+          style={{
+            top: flower.top,
+            bottom: flower.bottom,
+            left: flower.left,
+            right: flower.right,
+          }}
+          initial={{ opacity: 0, scale: 0, rotate: 0 }}
+          animate={isInView ? {
+            opacity: 0.3,
+            scale: flower.scale,
+            rotate: flower.rotate
+          } : {
+            opacity: 0,
+            scale: 0,
+            rotate: 0
+          }}
+          transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
+          alt=""
+        />
+      ))}
+
       <motion.div
         className="rsvp-content"
         initial={{ opacity: 0, y: 30 }}

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './ColorPalette.css';
 
 import Object1 from '../assets/Object.svg';
@@ -14,6 +14,24 @@ import ChatGPTFlower7 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 7.
 const ColorPalette = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [flowerCount, setFlowerCount] = useState(10);
+
+  useEffect(() => {
+    const calculateFlowerCount = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setFlowerCount(8); // Mobile
+      } else if (width < 1024) {
+        setFlowerCount(12); // Tablet
+      } else {
+        setFlowerCount(16); // Desktop
+      }
+    };
+
+    calculateFlowerCount();
+    window.addEventListener('resize', calculateFlowerCount);
+    return () => window.removeEventListener('resize', calculateFlowerCount);
+  }, []);
 
   const colors = [
     { name: 'Бежевий', hex: '#F5EEE6'},
@@ -27,23 +45,17 @@ const ColorPalette = () => {
 
   ];
 
-  // Falling flowers configuration
-  const flowers = [
-    { src: Object1, left: '5%', delay: 0, duration: 8, rotate: -15 },
-    { src: Object2, left: '15%', delay: 0.5, duration: 9, rotate: 20 },
-    { src: Object3, left: '25%', delay: 1, duration: 7.5, rotate: -10 },
-    { src: ChatGPTFlower4, left: '35%', delay: 1.5, duration: 8.5, rotate: 25 },
-    { src: ChatGPTFlower5, left: '45%', delay: 0.8, duration: 9.5, rotate: -20 },
-    { src: ChatGPTFlower6, left: '55%', delay: 1.8, duration: 8, rotate: 15 },
-    { src: ChatGPTFlower7, left: '65%', delay: 0.3, duration: 7, rotate: -25 },
-    { src: Object1, left: '75%', delay: 1.2, duration: 8.5, rotate: 10 },
-    { src: Object2, left: '85%', delay: 0.6, duration: 9, rotate: -18 },
-    { src: Object3, left: '95%', delay: 1.4, duration: 7.5, rotate: 22 },
-    { src: ChatGPTFlower4, left: '10%', delay: 2, duration: 8, rotate: -12 },
-    { src: ChatGPTFlower5, left: '20%', delay: 2.5, duration: 9, rotate: 18 },
-    { src: ChatGPTFlower6, left: '70%', delay: 2.2, duration: 8.5, rotate: -22 },
-    { src: ChatGPTFlower7, left: '80%', delay: 2.8, duration: 7.5, rotate: 14 },
-  ];
+  // Available flower images
+  const flowerImages = [Object1, Object2, Object3, ChatGPTFlower4, ChatGPTFlower5, ChatGPTFlower6, ChatGPTFlower7];
+
+  // Generate flowers dynamically based on screen width
+  const flowers = Array.from({ length: flowerCount }, (_, i) => ({
+    src: flowerImages[i % flowerImages.length],
+    left: `${(i * (100 / flowerCount)) + (Math.random() * 5)}%`,
+    delay: Math.random() * 3,
+    duration: 7 + Math.random() * 2.5,
+    rotate: (Math.random() - 0.5) * 50
+  }));
 
   const containerVariants = {
     hidden: { opacity: 0 },
