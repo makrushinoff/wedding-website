@@ -30,6 +30,15 @@ const RSVP = () => {
         >
           <h2 className="section-title">Анкета гостя</h2>
 
+          <motion.p
+            className="rsvp-deadline"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Просимо підтвердити до <span className="deadline-date">1 травня 2026</span>
+          </motion.p>
+
           <p className="rsvp-message">
             Просимо вас заповнити форму, де ви зможете підтвердити свою присутність на святі, та дати нам знати про свої вподобання
           </p>

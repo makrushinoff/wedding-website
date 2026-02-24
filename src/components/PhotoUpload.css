@@ -83,27 +83,42 @@
   font-style: italic;
 }
 
-/* Wedding icon decorations */
-.photo-wedding-icon {
+/* Photo and camera decorations */
+.photo-ornament {
   position: absolute;
-  width: 70px;
-  height: 70px;
-  opacity: 0.15;
   pointer-events: none;
-  user-select: none;
-  filter: brightness(0) saturate(100%) invert(66%) sepia(12%) saturate(844%) hue-rotate(327deg) brightness(91%) contrast(87%);
+  opacity: 0.15;
 }
 
-.icon-1 {
-  top: 15%;
+.ornament-camera-left {
+  width: 100px;
+  height: 100px;
+  top: 12%;
   left: 8%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg%3E%3Cpath d='M 25 30 L 35 30 Q 40 30 40 35 L 40 65 Q 40 70 35 70 L 25 70' stroke='%23C5D9E3' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M 75 30 L 65 30 Q 60 30 60 35 L 60 65 Q 60 70 65 70 L 75 70' stroke='%23C5D9E3' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M 30 25 Q 35 25 40 28 M 60 28 Q 65 25 70 25' stroke='%23D5C8D9' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3Cpath d='M 30 75 Q 35 75 40 72 M 60 72 Q 65 75 70 75' stroke='%23D5C8D9' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3Cpath d='M 28 32 Q 30 30 32 32 M 68 32 Q 70 30 72 32 M 28 68 Q 30 70 32 68 M 68 68 Q 70 70 72 68' stroke='%23C5A880' stroke-width='0.4' fill='none' opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.icon-2 {
-  bottom: 20%;
-  right: 8%;
-  width: 60px;
-  height: 60px;
+.ornament-camera-right {
+  width: 100px;
+  height: 100px;
+  bottom: 15%;
+  right: 10%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg%3E%3Cpath d='M 30 35 Q 32 33 35 35 Q 38 37 40 35 Q 42 33 45 35 Q 48 37 50 35 Q 52 33 55 35 Q 58 37 60 35 Q 62 33 65 35 Q 68 37 70 35' stroke='%23FFD3D8' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M 30 65 Q 32 67 35 65 Q 38 63 40 65 Q 42 67 45 65 Q 48 63 50 65 Q 52 67 55 65 Q 58 63 60 65 Q 62 67 65 65 Q 68 63 70 65' stroke='%23FFD3D8' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M 30 40 L 30 60 M 70 40 L 70 60' stroke='%23D5C8D9' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3Ccircle cx='32' cy='37' r='1.5' fill='%23C5D9E3' opacity='0.3'/%3E%3Ccircle cx='68' cy='37' r='1.5' fill='%23C5D9E3' opacity='0.3'/%3E%3Ccircle cx='32' cy='63' r='1.5' fill='%23FFE5B4' opacity='0.3'/%3E%3Ccircle cx='68' cy='63' r='1.5' fill='%23FFE5B4' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornament-photo-frames {
+  width: 140px;
+  height: 140px;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg%3E%3Crect x='20' y='20' width='28' height='36' rx='2' fill='none' stroke='%23FFD3D8' stroke-width='0.6' opacity='0.3' transform='rotate(-8 34 38)'/%3E%3Cpath d='M 22 24 L 26 24 M 22 52 L 26 52 M 44 24 L 48 24 M 44 52 L 48 52' stroke='%23FFD3D8' stroke-width='0.4' opacity='0.25' transform='rotate(-8 34 38)'/%3E%3Crect x='48' y='52' width='32' height='40' rx='2' fill='none' stroke='%23C5D9E3' stroke-width='0.6' opacity='0.3' transform='rotate(6 64 72)'/%3E%3Cpath d='M 50 56 L 54 56 M 50 88 L 54 88 M 74 56 L 78 56 M 74 88 L 78 88' stroke='%23C5D9E3' stroke-width='0.4' opacity='0.25' transform='rotate(6 64 72)'/%3E%3Crect x='68' y='26' width='24' height='30' rx='2' fill='none' stroke='%23D5C8D9' stroke-width='0.6' opacity='0.3' transform='rotate(12 80 41)'/%3E%3Cpath d='M 70 30 L 74 30 M 70 52 L 74 52 M 86 30 L 90 30 M 86 52 L 90 52' stroke='%23D5C8D9' stroke-width='0.4' opacity='0.25' transform='rotate(12 80 41)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Tablet: 768px and up */
@@ -131,14 +146,22 @@
     padding: 1.2rem 3rem;
   }
 
-  .photo-wedding-icon {
-    width: 90px;
-    height: 90px;
+  .ornament-camera-left {
+    width: 180px;
+    height: 180px;
+    opacity: 0.5;
   }
 
-  .icon-2 {
-    width: 75px;
-    height: 75px;
+  .ornament-camera-right {
+    width: 170px;
+    height: 170px;
+    opacity: 0.5;
+  }
+
+  .ornament-photo-frames {
+    width: 250px;
+    height: 250px;
+    opacity: 0.5;
   }
 }
 

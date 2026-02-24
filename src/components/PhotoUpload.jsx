@@ -17,6 +17,11 @@ const PhotoUpload = () => {
 
   return (
     <section className="photo-upload" ref={ref}>
+      {/* Decorative photo frame ornaments */}
+      <div className="photo-ornament ornament-camera-left"></div>
+      <div className="photo-ornament ornament-camera-right"></div>
+      <div className="photo-ornament ornament-photo-frames"></div>
+
       <motion.div
         className="photo-upload-content"
         initial={{ opacity: 0, y: 30 }}

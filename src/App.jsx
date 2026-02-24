@@ -7,6 +7,7 @@ import GuestInfo from './components/GuestInfo';
 import ColorPalette from './components/ColorPalette';
 import RSVP from './components/RSVP';
 import PhotoUpload from './components/PhotoUpload';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       <div id="photos">
         <PhotoUpload />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -26,6 +26,26 @@
   box-shadow: 0 10px 40px rgba(213, 200, 217, 0.2);
 }
 
+.rsvp-deadline {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #8B7355;
+  margin: 1.5rem 0 0.5rem 0;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #FFF8F9 0%, #FFFBF5 100%);
+  border-radius: 15px;
+  display: inline-block;
+  border: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.deadline-date {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #C5A880;
+}
+
 .rsvp-message {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.1rem;

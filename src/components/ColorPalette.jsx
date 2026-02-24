@@ -3,6 +3,14 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import './ColorPalette.css';
 
+import Object1 from '../assets/Object.svg';
+import Object2 from '../assets/Object 2.svg';
+import Object3 from '../assets/Object 3.svg';
+import ChatGPTFlower4 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 4.svg';
+import ChatGPTFlower5 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 5.svg';
+import ChatGPTFlower6 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 6.svg';
+import ChatGPTFlower7 from '../assets/ChatGPT Image Jan 23, 2026, 08_08_49 PM 7.svg';
+
 const ColorPalette = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -17,6 +25,24 @@ const ColorPalette = () => {
     { name: 'М\'ятний', hex: '#D4E5E4' },
     { name: 'Шавлієвий', hex: '#D4E5D4'},
 
+  ];
+
+  // Falling flowers configuration
+  const flowers = [
+    { src: Object1, left: '5%', delay: 0, duration: 8, rotate: -15 },
+    { src: Object2, left: '15%', delay: 0.5, duration: 9, rotate: 20 },
+    { src: Object3, left: '25%', delay: 1, duration: 7.5, rotate: -10 },
+    { src: ChatGPTFlower4, left: '35%', delay: 1.5, duration: 8.5, rotate: 25 },
+    { src: ChatGPTFlower5, left: '45%', delay: 0.8, duration: 9.5, rotate: -20 },
+    { src: ChatGPTFlower6, left: '55%', delay: 1.8, duration: 8, rotate: 15 },
+    { src: ChatGPTFlower7, left: '65%', delay: 0.3, duration: 7, rotate: -25 },
+    { src: Object1, left: '75%', delay: 1.2, duration: 8.5, rotate: 10 },
+    { src: Object2, left: '85%', delay: 0.6, duration: 9, rotate: -18 },
+    { src: Object3, left: '95%', delay: 1.4, duration: 7.5, rotate: 22 },
+    { src: ChatGPTFlower4, left: '10%', delay: 2, duration: 8, rotate: -12 },
+    { src: ChatGPTFlower5, left: '20%', delay: 2.5, duration: 9, rotate: 18 },
+    { src: ChatGPTFlower6, left: '70%', delay: 2.2, duration: 8.5, rotate: -22 },
+    { src: ChatGPTFlower7, left: '80%', delay: 2.8, duration: 7.5, rotate: 14 },
   ];
 
   const containerVariants = {
@@ -41,6 +67,32 @@ const ColorPalette = () => {
 
   return (
     <section className="color-palette" ref={ref}>
+      {/* Falling flowers animation */}
+      {isInView && flowers.map((flower, index) => (
+        <motion.img
+          key={index}
+          src={flower.src}
+          className="falling-flower"
+          initial={{
+            top: '-100px',
+            left: flower.left,
+            opacity: 0,
+            rotate: 0
+          }}
+          animate={{
+            top: 'calc(100% - 80px)',
+            opacity: [0, 0.4, 0.4, 0.3],
+            rotate: flower.rotate
+          }}
+          transition={{
+            duration: flower.duration,
+            delay: flower.delay,
+            ease: "easeIn"
+          }}
+          alt=""
+        />
+      ))}
+
       <motion.div
         className="palette-content"
         initial={{ opacity: 0, y: 30 }}
