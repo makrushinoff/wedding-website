@@ -19,12 +19,16 @@ const ColorPalette = () => {
   useEffect(() => {
     const calculateFlowerCount = () => {
       const width = window.innerWidth;
-      if (width < 768) {
-        setFlowerCount(8); // Mobile
+      if (width < 480) {
+        setFlowerCount(8); // Small mobile
+      } else if (width < 768) {
+        setFlowerCount(12); // Mobile
       } else if (width < 1024) {
-        setFlowerCount(12); // Tablet
+        setFlowerCount(16); // Tablet
+      } else if (width < 1440) {
+        setFlowerCount(20); // Desktop
       } else {
-        setFlowerCount(16); // Desktop
+        setFlowerCount(25); // Large desktop
       }
     };
 
@@ -48,14 +52,21 @@ const ColorPalette = () => {
   // Available flower images
   const flowerImages = [Object1, Object2, Object3, ChatGPTFlower4, ChatGPTFlower5, ChatGPTFlower6, ChatGPTFlower7];
 
-  // Generate flowers dynamically based on screen width
-  const flowers = Array.from({ length: flowerCount }, (_, i) => ({
-    src: flowerImages[i % flowerImages.length],
-    left: `${(i * (100 / flowerCount)) + (Math.random() * 5)}%`,
-    delay: Math.random() * 3,
-    duration: 7 + Math.random() * 2.5,
-    rotate: (Math.random() - 0.5) * 50
-  }));
+  // Generate flowers dynamically based on screen width with better distribution
+  const flowers = Array.from({ length: flowerCount }, (_, i) => {
+    const segment = 100 / flowerCount;
+    const centerOfSegment = segment * i + segment / 2;
+    const randomOffset = (Math.random() - 0.5) * (segment * 0.5); // Stay within segment
+
+    return {
+      src: flowerImages[i % flowerImages.length],
+      left: `${Math.max(2, Math.min(98, centerOfSegment + randomOffset))}%`,
+      delay: Math.random() * 5,
+      duration: 8 + Math.random() * 4,
+      rotate: (Math.random() - 0.5) * 60,
+      scale: 0.6 + Math.random() * 0.6
+    };
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -89,12 +100,14 @@ const ColorPalette = () => {
             top: '-100px',
             left: flower.left,
             opacity: 0,
-            rotate: 0
+            rotate: 0,
+            scale: flower.scale
           }}
           animate={{
             top: 'calc(100% - 80px)',
             opacity: [0, 0.4, 0.4, 0.3],
-            rotate: flower.rotate
+            rotate: flower.rotate,
+            scale: flower.scale
           }}
           transition={{
             duration: flower.duration,

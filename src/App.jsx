@@ -5,6 +5,7 @@ import Details from './components/Details';
 import Transfer from './components/Transfer';
 import GuestInfo from './components/GuestInfo';
 import ColorPalette from './components/ColorPalette';
+import NoFlowers from './components/NoFlowers';
 import RSVP from './components/RSVP';
 import PhotoUpload from './components/PhotoUpload';
 import Footer from './components/Footer';
@@ -32,6 +33,7 @@ function App() {
       <div id="colors">
         <ColorPalette />
       </div>
+      <NoFlowers />
       <div id="rsvp">
         <RSVP />
       </div>

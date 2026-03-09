@@ -1,0 +1,372 @@
+/* Mobile-first base styles */
+.no-flowers {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF8FA 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 1.25rem;
+  border-bottom: 1px solid rgba(213, 200, 217, 0.15);
+  box-sizing: border-box;
+}
+
+/* Decorative flowers */
+.decorative-flower {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.decorative-flower svg {
+  font-size: 2.5rem;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rotation));
+  }
+  50% {
+    transform: translateY(-15px) rotate(var(--rotation));
+  }
+}
+
+/* Flower positions - mobile */
+.flower-deco-1 {
+  top: 10%;
+  left: 5%;
+  --rotation: -15deg;
+  animation-duration: 5s;
+}
+
+.flower-deco-2 {
+  top: 15%;
+  right: 8%;
+  --rotation: 25deg;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+
+.flower-deco-3 {
+  bottom: 25%;
+  left: 3%;
+  --rotation: 45deg;
+  animation-duration: 6s;
+  animation-delay: 0.5s;
+}
+
+.flower-deco-4 {
+  bottom: 20%;
+  right: 5%;
+  --rotation: -35deg;
+  animation-duration: 6.5s;
+  animation-delay: 1.5s;
+}
+
+.flower-deco-5 {
+  top: 45%;
+  left: 2%;
+  --rotation: 10deg;
+  animation-duration: 5.5s;
+  animation-delay: 0.8s;
+}
+
+.flower-deco-6 {
+  top: 50%;
+  right: 3%;
+  --rotation: -20deg;
+  animation-duration: 7s;
+  animation-delay: 0.3s;
+}
+
+.flower-deco-7 {
+  bottom: 40%;
+  left: 8%;
+  --rotation: 30deg;
+  animation-duration: 6s;
+  animation-delay: 1.2s;
+}
+
+.flower-deco-8 {
+  top: 30%;
+  right: 12%;
+  --rotation: -10deg;
+  animation-duration: 5.5s;
+  animation-delay: 0.7s;
+}
+
+.no-flowers-content {
+  max-width: 700px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.flower-icon-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.flower-icon {
+  font-size: 3rem !important;
+  color: #C5A880;
+  opacity: 0.8;
+}
+
+.no-flowers-text {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  box-shadow:
+    0 15px 50px rgba(213, 200, 217, 0.15),
+    0 5px 15px rgba(197, 168, 128, 0.08);
+  border: 1px solid rgba(255, 248, 250, 0.4);
+}
+
+.no-flowers-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #6B5B4D;
+  margin: 0 0 1.25rem 0;
+  font-weight: 600;
+}
+
+.no-flowers-message {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #8B7355;
+  margin: 0 0 1rem 0;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.no-flowers-reason {
+  font-family: 'Marck Script', cursive;
+  font-size: 1.1rem;
+  color: #C5A880;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Tablet - 768px */
+@media (min-width: 768px) {
+  .no-flowers {
+    padding: 4rem 1.5rem;
+  }
+
+  .decorative-flower svg {
+    font-size: 3.5rem;
+  }
+
+  .flower-deco-1 {
+    top: 12%;
+    left: 8%;
+  }
+
+  .flower-deco-2 {
+    top: 10%;
+    right: 10%;
+  }
+
+  .flower-deco-3 {
+    bottom: 22%;
+    left: 6%;
+  }
+
+  .flower-deco-4 {
+    bottom: 18%;
+    right: 8%;
+  }
+
+  .flower-deco-5 {
+    top: 48%;
+    left: 4%;
+  }
+
+  .flower-deco-6 {
+    top: 52%;
+    right: 5%;
+  }
+
+  .flower-deco-7 {
+    bottom: 38%;
+    left: 10%;
+  }
+
+  .flower-deco-8 {
+    top: 28%;
+    right: 14%;
+  }
+
+  .flower-icon {
+    font-size: 3.5rem !important;
+  }
+
+  .no-flowers-text {
+    padding: 2.5rem 2rem;
+  }
+
+  .no-flowers-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .no-flowers-message {
+    font-size: 1rem;
+  }
+
+  .no-flowers-reason {
+    font-size: 1.3rem;
+  }
+}
+
+/* Large tablet - 1024px */
+@media (min-width: 1024px) {
+  .no-flowers {
+    padding: 4rem 2rem;
+  }
+
+  .decorative-flower svg {
+    font-size: 4rem;
+  }
+
+  .flower-deco-1 {
+    top: 15%;
+    left: 12%;
+  }
+
+  .flower-deco-2 {
+    top: 12%;
+    right: 15%;
+  }
+
+  .flower-deco-3 {
+    bottom: 25%;
+    left: 10%;
+  }
+
+  .flower-deco-4 {
+    bottom: 22%;
+    right: 12%;
+  }
+
+  .flower-deco-5 {
+    top: 50%;
+    left: 6%;
+  }
+
+  .flower-deco-6 {
+    top: 55%;
+    right: 8%;
+  }
+
+  .flower-deco-7 {
+    bottom: 42%;
+    left: 14%;
+  }
+
+  .flower-deco-8 {
+    top: 32%;
+    right: 18%;
+  }
+
+  .flower-icon {
+    font-size: 4rem !important;
+  }
+
+  .flower-icon-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .no-flowers-text {
+    padding: 3rem 2.5rem;
+  }
+
+  .no-flowers-title {
+    font-size: 2rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .no-flowers-message {
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .no-flowers-reason {
+    font-size: 1.4rem;
+  }
+}
+
+/* Desktop - 1280px */
+@media (min-width: 1280px) {
+  .no-flowers {
+    padding: 5rem 2rem;
+  }
+
+  .decorative-flower svg {
+    font-size: 5rem;
+  }
+
+  .flower-deco-1 {
+    top: 18%;
+    left: 15%;
+  }
+
+  .flower-deco-2 {
+    top: 15%;
+    right: 18%;
+  }
+
+  .flower-deco-3 {
+    bottom: 28%;
+    left: 12%;
+  }
+
+  .flower-deco-4 {
+    bottom: 25%;
+    right: 15%;
+  }
+
+  .flower-deco-5 {
+    top: 52%;
+    left: 8%;
+  }
+
+  .flower-deco-6 {
+    top: 58%;
+    right: 10%;
+  }
+
+  .flower-deco-7 {
+    bottom: 45%;
+    left: 18%;
+  }
+
+  .flower-deco-8 {
+    top: 35%;
+    right: 22%;
+  }
+
+  .flower-icon {
+    font-size: 4.5rem !important;
+  }
+
+  .no-flowers-text {
+    padding: 3.5rem 3rem;
+  }
+
+  .no-flowers-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .no-flowers-message {
+    font-size: 1.1rem;
+  }
+
+  .no-flowers-reason {
+    font-size: 1.5rem;
+  }
+}

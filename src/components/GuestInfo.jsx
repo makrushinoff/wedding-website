@@ -3,22 +3,24 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import './GuestInfo.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import photo1 from '../assets/IMG_1196.JPG';
-import photo2 from '../assets/IMG_1197.JPG';
-import photo3 from '../assets/IMG_1198.JPG';
-import photo4 from '../assets/IMG_1199.JPG';
-import photo5 from '../assets/IMG_1200.JPG';
+import photo1 from '../assets/photo_2026-03-09_12-07-18.jpg';
+import photo2 from '../assets/photo_2025-06-08_18-59-45.jpg';
+import photo5 from '../assets/IMG_1198.JPG';
+import photo3 from '../assets/IMG_1199.JPG';
+import photo4 from '../assets/IMG_1200.JPG';
+import photo6 from '../assets/photo_2026-03-09_12-35-31.jpg';
 
 const GuestInfo = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const photos = [
-    { src: photo1, alt: 'Фото з племінниками 1' },
-    { src: photo2, alt: 'Фото з племінниками 2' },
-    { src: photo3, alt: 'Фото з племінниками 3' },
-    { src: photo4, alt: 'Фото з племінниками 4' },
-    { src: photo5, alt: 'Фото з племінниками 5' }
+    { src: photo1, alt: 'Оливка' },
+    { src: photo2, alt: 'Даня і Аня' },
+    { src: photo3, alt: 'Владиславчик' },
+    { src: photo6, alt: 'Данька' },
+    { src: photo4, alt: 'Віка' },
+    { src: photo5, alt: 'Оливка і Віктор' },
   ];
 
   return (

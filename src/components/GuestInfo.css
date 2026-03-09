@@ -92,6 +92,7 @@
   gap: var(--photo-gap);
   width: fit-content;
   animation: scroll-photos 25s linear infinite;
+  will-change: transform;
 }
 
 @keyframes scroll-photos {
@@ -99,7 +100,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-1 * (var(--photo-width) + var(--photo-gap)) * 5));
+    transform: translateX(calc(-1 * (var(--photo-width) + var(--photo-gap)) * 6));
   }
 }
 
