@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
             <div className="contact-info">
               <EmailIcon sx={{ fontSize: 18, color: '#C5A880' }} />
-              <a href="mailto:makrushinodd@gmail.com" className="contact-link">makrushinodd@gmail.com</a>
+              <a href="mailto:makrushinoff@gmail.com" className="contact-link">makrushinoff@gmail.com</a>
             </div>
           </div>
 
