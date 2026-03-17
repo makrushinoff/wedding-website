@@ -1,14 +1,13 @@
 /* Mobile-first base styles */
 .no-flowers {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #FFFFFF 0%, #FFF8FA 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
   position: relative;
   overflow: hidden;
   padding: 3rem 1.25rem;
-  border-bottom: 1px solid rgba(213, 200, 217, 0.15);
   box-sizing: border-box;
 }
 

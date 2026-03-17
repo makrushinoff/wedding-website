@@ -80,11 +80,11 @@ const RSVP = () => {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Просимо підтвердити до <span className="deadline-date">1 травня 2026</span>
+            Просимо підтвердити якомога раніше
           </motion.p>
 
           <p className="rsvp-message">
-            Просимо вас заповнити форму, де ви зможете підтвердити свою присутність на святі, та дати нам знати про свої вподобання
+            Просимо вас заповнити форму, де ви зможете підтвердити свою присутність на святі
           </p>
 
           <motion.div className="rsvp-button-wrapper">
